@@ -18,11 +18,6 @@ Original file is located at
 #   border-radius: 0; /* Adiciona esta linha para remover a borda arredondada */
 # }
 
-import streamlit as st
-import pandas as pd
-from sklearn.ensemble import RandomForestRegressor
-import numpy as np
-
 st.set_page_config(layout="wide")
 
 with open("styles.css") as f:
@@ -47,83 +42,77 @@ background-color: rgba(0, 0, 0, 0);
 </style>
 """, unsafe_allow_html=True)
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%writefile -a app.py
-# 
-# 
-# st.sidebar.title('Options')
-# 
-# 
-# pageselected = st.sidebar.selectbox('', ['Home','Potentials predictions'])
-# 
-# import pickle
-# 
-# # Initialize session state variables
-# if 'selected_elements' not in st.session_state:
-#     st.session_state.selected_elements = []
-# if 'selected_material' not in st.session_state:
-#     st.session_state.selected_material = []
-# 
-# if 'sel_material' not in st.session_state:
-#     st.session_state.sel_material = []
-# if 'sel_material' not in st.session_state:
-#     st.session_state.sel_material = []
-# 
-# 
-# if 'sel_El_conc' not in st.session_state:
-#     st.session_state.sel_El_conc = []
-# if 'sel_pH' not in st.session_state:
-#     st.session_state.sel_pH = []
-# if 'sel_concentration' not in st.session_state:
-#     st.session_state.sel_concentration = []
-# if 'sel_selec_electrolyte' not in st.session_state:
-#     st.session_state.sel_selec_electrolyte = []
-# if 'sel_option_reference' not in st.session_state:
-#     st.session_state.sel_option_reference = []
-# if 'sel_option_analyte' not in st.session_state:
-#     st.session_state.sel_option_analyte = []
-# 
-# if pageselected == 'Home' :
-#     st.image("https://github.com/TWvonZuben/Streamlit/blob/main/Screenshot%20from%202024-01-15%2017-28-00.png?raw=true")
-# 
-#     st.write('Welcome to CAPER. CAPER is an initiative that stems from the article XXX (DOI), which utilizes machine learning algorithms to predict the electrochemical potentials of the oxidation of methanol and ethanol. With this, you can predict the onset and oxidation potentials for the electrooxidation of methanol and ethanol, depending on the electrochemical reactions and the materials of the working electrode that you use')
-# 
-# if pageselected == 'Database informations' :
-#   st.title('Database informations')
-# 
-# if pageselected == 'Potentials predictions':
-# 
-#     parameters_selection = st.sidebar.radio('', ['Reactions conditions', 'working electrode', 'Complete information'])
-# 
-#     if parameters_selection == 'Reactions conditions':
-# 
-#         st.title('Potentials predictions')
-#         st.write('Choose the parameters used')
-# 
-#         options_electrolyte = ['KOH', 'NaOH', 'KNO3', 'phosphate','H2SO4', 'HClO$_4', 'HCl', 'Other']
-#         st.session_state.sel_selec_electrolyte = st.selectbox('Select the electrolyte used', options_electrolyte)
-# 
-#         st.session_state.sel_El_conc = st.number_input('Enter the value of the electrolyte concentration (mol/L):',
-#                                   min_value=0.001, max_value=10.000, value=1.000, step=0.001)
-#         st.session_state.sel_pH = st.slider('Select the pH value used:', min_value=0.0, max_value=14.0, value=7.0, step=0.1)
-# 
-#         options_analyte = ['Methanol', 'Ethanol']
-#         st.session_state.sel_option_analyte = st.selectbox('Select the analyte', options_analyte)
-# 
-#         st.session_state.sel_concentration = st.number_input('Enter the value of the analyte concentration (mol/L):', min_value=0.001, max_value=10.000, value=1.000, step=0.001)
-# 
-#         options_reference = ['RHE', 'SCE', 'NHE', 'SHE','Ag/AgCl', 'Hg/HgO', 'MMS', 'MMO', 'Other']
-#         st.session_state.sel_option_reference = st.selectbox('Select the reference electrode used', options_reference)
-# 
-# 
-#     st.sidebar.write('Selected information:')
-# 
-#     st.sidebar.write(f'Electrolyte: {st.session_state.sel_selec_electrolyte} ({st.session_state.sel_El_conc} mol/L)')
-#     st.sidebar.write(f'pH: {st.session_state.sel_pH}')
-#     st.sidebar.write(f'Analyte: {st.session_state.sel_option_analyte} ({st.session_state.sel_concentration} mol/L)')
-#     st.sidebar.write(f'Reference electrode: {st.session_state.sel_option_reference}')
-# 
-#
+st.sidebar.title('Options')
+
+
+pageselected = st.sidebar.selectbox('', ['Home','Potentials predictions'])
+
+import pickle
+
+# Initialize session state variables
+if 'selected_elements' not in st.session_state:
+    st.session_state.selected_elements = []
+if 'selected_material' not in st.session_state:
+    st.session_state.selected_material = []
+
+if 'sel_material' not in st.session_state:
+    st.session_state.sel_material = []
+if 'sel_material' not in st.session_state:
+    st.session_state.sel_material = []
+
+
+if 'sel_El_conc' not in st.session_state:
+    st.session_state.sel_El_conc = []
+if 'sel_pH' not in st.session_state:
+    st.session_state.sel_pH = []
+if 'sel_concentration' not in st.session_state:
+    st.session_state.sel_concentration = []
+if 'sel_selec_electrolyte' not in st.session_state:
+    st.session_state.sel_selec_electrolyte = []
+if 'sel_option_reference' not in st.session_state:
+    st.session_state.sel_option_reference = []
+if 'sel_option_analyte' not in st.session_state:
+    st.session_state.sel_option_analyte = []
+
+if pageselected == 'Home' :
+    st.image("https://github.com/TWvonZuben/Streamlit/blob/main/Screenshot%20from%202024-01-15%2017-28-00.png?raw=true")
+
+    st.write('Welcome to CAPER. CAPER is an initiative that stems from the article XXX (DOI), which utilizes machine learning algorithms to predict the electrochemical potentials of the oxidation of methanol and ethanol. With this, you can predict the onset and oxidation potentials for the electrooxidation of methanol and ethanol, depending on the electrochemical reactions and the materials of the working electrode that you use')
+
+if pageselected == 'Database informations' :
+  st.title('Database informations')
+
+if pageselected == 'Potentials predictions':
+
+    parameters_selection = st.sidebar.radio('', ['Reactions conditions', 'working electrode', 'Complete information'])
+
+    if parameters_selection == 'Reactions conditions':
+
+        st.title('Potentials predictions')
+        st.write('Choose the parameters used')
+
+        options_electrolyte = ['KOH', 'NaOH', 'KNO3', 'phosphate','H2SO4', 'HClO$_4', 'HCl', 'Other']
+        st.session_state.sel_selec_electrolyte = st.selectbox('Select the electrolyte used', options_electrolyte)
+
+        st.session_state.sel_El_conc = st.number_input('Enter the value of the electrolyte concentration (mol/L):',
+                                  min_value=0.001, max_value=10.000, value=1.000, step=0.001)
+        st.session_state.sel_pH = st.slider('Select the pH value used:', min_value=0.0, max_value=14.0, value=7.0, step=0.1)
+
+        options_analyte = ['Methanol', 'Ethanol']
+        st.session_state.sel_option_analyte = st.selectbox('Select the analyte', options_analyte)
+
+        st.session_state.sel_concentration = st.number_input('Enter the value of the analyte concentration (mol/L):', min_value=0.001, max_value=10.000, value=1.000, step=0.001)
+
+        options_reference = ['RHE', 'SCE', 'NHE', 'SHE','Ag/AgCl', 'Hg/HgO', 'MMS', 'MMO', 'Other']
+        st.session_state.sel_option_reference = st.selectbox('Select the reference electrode used', options_reference)
+
+
+    st.sidebar.write('Selected information:')
+
+    st.sidebar.write(f'Electrolyte: {st.session_state.sel_selec_electrolyte} ({st.session_state.sel_El_conc} mol/L)')
+    st.sidebar.write(f'pH: {st.session_state.sel_pH}')
+    st.sidebar.write(f'Analyte: {st.session_state.sel_option_analyte} ({st.session_state.sel_concentration} mol/L)')
+    st.sidebar.write(f'Reference electrode: {st.session_state.sel_option_reference}')
 
 if parameters_selection == 'working electrode':
 
