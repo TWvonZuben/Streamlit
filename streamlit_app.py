@@ -123,7 +123,7 @@ if pageselected == 'Potentials prediction':
     st.sidebar.write(f'**Analyte:** {st.session_state.sel_option_analyte} ({st.session_state.sel_concentration} mol/L)')
     st.sidebar.write(f'**Reference electrode:** {st.session_state.sel_option_reference}')
 
-if parameters_selection == 'Working Electrode descrition':
+    if parameters_selection == 'Working Electrode descrition':
 
         st.header('Working Electrode descrition', divider='rainbow')
 
@@ -734,7 +734,7 @@ if parameters_selection == 'Working Electrode descrition':
                 if option_nein :
                   st.session_state.selected_elements.append('N')
 
-if selected_option_WE == 'Material deposited':
+        if selected_option_WE == 'Material deposited':
 
             st.subheader('Describe the :red[material deposited] on the working electrode based on the selection of elements from the Periodic Table')
 
@@ -1332,10 +1332,10 @@ if selected_option_WE == 'Material deposited':
                 if option_nein :
                   st.session_state.selected_material.append('N')
 
-st.sidebar.write(f'**Working Electrode material:** {st.session_state.selected_elements}')
+    st.sidebar.write(f'**Working Electrode material:** {st.session_state.selected_elements}')
     st.sidebar.write(f'**Depoisted material**: {st.session_state.selected_material}')
 
-X_oxidation = ['W-carbons','carbons','C', 'Org', 'W-graphite','W-C', 'W-Sn','W-Au','Au','W-Pd','Pd','_In','W-Fe','_Ni','Ni','Pt','W-Pt', 'W-N','O','Zn','Ag','Ru','B','Zr','Ce','Bi','W','Sb','Te', 'Cu', '_Cu', 'Rh','_Sn', 'positive','pH','El_conc','methanol','ethanol','H2SO4','HClO4','KOH','NaOH','Hg/HgO','MMS','RHE','SCE', 'J__mA_cm', 'concentration', 'Ox_Onset']
+    X_oxidation = ['W-carbons','carbons','C', 'Org', 'W-graphite','W-C', 'W-Sn','W-Au','Au','W-Pd','Pd','_In','W-Fe','_Ni','Ni','Pt','W-Pt', 'W-N','O','Zn','Ag','Ru','B','Zr','Ce','Bi','W','Sb','Te', 'Cu', '_Cu', 'Rh','_Sn', 'positive','pH','El_conc','methanol','ethanol','H2SO4','HClO4','KOH','NaOH','Hg/HgO','MMS','RHE','SCE', 'J__mA_cm', 'concentration', 'Ox_Onset']
     X = pd.DataFrame(0, index=range(1), columns=X_oxidation)
 
     X.at[0, 'pH'] = st.session_state.sel_pH
