@@ -1473,16 +1473,16 @@ if pageselected == 'Potentials prediction':
       X.at[0, 'W-carbons'] = 1
 
 
-    with open('Streamlit/model_oxidation_1.pkl', 'rb') as file:
+    with open('model_oxidation_1.pkl', 'rb') as file:
       model_oxidation_1 = pickle.load(file)
 
-    with open('Streamlit/model_oxidation_2.pkl', 'rb') as file:
+    with open('model_oxidation_2.pkl', 'rb') as file:
       model_oxidation_2 = pickle.load(file)
 
-    with open('Streamlit/model_oxidation_3.pkl', 'rb') as file:
+    with open('model_oxidation_3.pkl', 'rb') as file:
       model_oxidation_3 = pickle.load(file)
 
-    with open('Streamlit/model_oxidation_4.pkl', 'rb') as file:
+    with open('model_oxidation_4.pkl', 'rb') as file:
       model_oxidation_4 = pickle.load(file)
 
     prediction = X
@@ -1637,7 +1637,7 @@ if pageselected == 'Potentials prediction':
       X_2.at[0, 'W-carbons'] = 1
 
 
-    with open('Streamlit/model_onset_1.pkl', 'rb') as file:
+    with open('model_onset_1.pkl', 'rb') as file:
       model_onset_1 = pickle.load(file)
 
     prediction_onset_ = X_2
@@ -1655,14 +1655,14 @@ if pageselected == 'Potentials prediction':
     X_3 = X_.copy()
     X_3['Pot_Ox_V (SHE)'] = mean_ox[0]
 
-    with open('Streamlit/model_onset_2_A.pkl', 'rb') as file:
+    with open('model_onset_2_A.pkl', 'rb') as file:
       model_onset_2_A = pickle.load(file)
 
     y_pred_onset = model_onset_2_A.predict(X_3)
 
     predicted_onset.append(y_pred_onset)
 
-    with open('Streamlit/model_onset_2_B.pkl', 'rb') as file:
+    with open('model_onset_2_B.pkl', 'rb') as file:
       model_onset_2_B = pickle.load(file)
 
     y_pred_onset = model_onset_2_B.predict(X_3)
@@ -1676,7 +1676,7 @@ if pageselected == 'Potentials prediction':
     mean_onset = selected_rows_onset[[0]].mean(axis=0)
     std_onset = selected_rows_onset[[0]].std(axis=0)
 
-checked = st.sidebar.checkbox("The information is complete, **you can make a prediction!**")
-if checked:
-    st.sidebar.subheader('Onset potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_onset[0], std_onset[0]))
-    st.sidebar.subheader('Oxidation potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_ox[0], std_ox[0]))
+    checked = st.sidebar.checkbox("The information is complete, **you can make a prediction!**")
+    if checked:
+        st.sidebar.subheader('Onset potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_onset[0], std_onset[0]))
+        st.sidebar.subheader('Oxidation potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_ox[0], std_ox[0]))
