@@ -123,6 +123,10 @@ if pageselected == 'Potentials prediction':
     st.sidebar.write(f'**Analyte:** {st.session_state.sel_option_analyte} ({st.session_state.sel_concentration} mol/L)')
     st.sidebar.write(f'**Reference electrode:** {st.session_state.sel_option_reference}')
 
+
+    st.sidebar.write(f'**Working Electrode material:** {st.session_state.selected_elements}')
+    st.sidebar.write(f'**Depoisted material**: {st.session_state.selected_material}')
+
 if parameters_selection == 'Working Electrode descrition':
 
         st.header('Working Electrode descrition', divider='rainbow')
@@ -1331,6 +1335,3 @@ if selected_option_WE == 'Material deposited':
                   st.session_state.selected_material.append('Aniline')
                 if option_nein :
                   st.session_state.selected_material.append('N')
-
-    st.sidebar.write(f'**Working Electrode material:** {st.session_state.selected_elements}')
-    st.sidebar.write(f'**Depoisted material**: {st.session_state.selected_material}')
