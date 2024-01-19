@@ -11,6 +11,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import sklearn
+from sklearn.ensemble import RandomForestRegressor
 
 st.set_page_config(layout="wide")
 
@@ -1472,9 +1474,9 @@ if pageselected == 'Potentials prediction':
     if 'Polymer' in st.session_state.selected_elements:
       X.at[0, 'W-carbons'] = 1
 
-
-    model_oxidation_1 = pickle.load(open('model_oxidation_1.pkl', 'rb'))
-
+    with open('model_oxidation_1.pkl', 'rb') as file:
+      model_oxidation_1 = pickle.load(file)
+         
     with open('model_oxidation_2.pkl', 'rb') as file:
       model_oxidation_2 = pickle.load(file)
 
