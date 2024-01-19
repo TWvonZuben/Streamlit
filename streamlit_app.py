@@ -124,9 +124,6 @@ if pageselected == 'Potentials prediction':
     st.sidebar.write(f'**Reference electrode:** {st.session_state.sel_option_reference}')
 
 
-    st.sidebar.write(f'**Working Electrode material:** {st.session_state.selected_elements}')
-    st.sidebar.write(f'**Depoisted material**: {st.session_state.selected_material}')
-
 if parameters_selection == 'Working Electrode descrition':
 
         st.header('Working Electrode descrition', divider='rainbow')
@@ -738,7 +735,7 @@ if parameters_selection == 'Working Electrode descrition':
                 if option_nein :
                   st.session_state.selected_elements.append('N')
 
-if selected_option_WE == 'Material deposited':
+    if selected_option_WE == 'Material deposited':
 
             st.subheader('Describe the :red[material deposited] on the working electrode based on the selection of elements from the Periodic Table')
 
@@ -1335,3 +1332,7 @@ if selected_option_WE == 'Material deposited':
                   st.session_state.selected_material.append('Aniline')
                 if option_nein :
                   st.session_state.selected_material.append('N')
+    
+
+    st.sidebar.write(f'**Working Electrode material:** {st.session_state.selected_elements}')
+    st.sidebar.write(f'**Depoisted material**: {st.session_state.selected_material}')
