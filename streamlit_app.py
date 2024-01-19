@@ -69,7 +69,7 @@ if 'sel_option_analyte' not in st.session_state:
     st.session_state.sel_option_analyte = []
 
 if pageselected == 'Home' :
-    st.image("https://github.com/TWvonZuben/Streamlit/blob/main/Screenshot%20from%202024-01-15%2017-28-00.png?raw=true")
+    st.image("https://github.com/TWvonZuben/Streamlit/blob/main/capper_cover.png?raw=true")
 
     st.header('Welcome to CAPER!', divider='rainbow')
 
