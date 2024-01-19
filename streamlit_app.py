@@ -1677,6 +1677,6 @@ if pageselected == 'Potentials prediction':
     std_onset = selected_rows_onset[[0]].std(axis=0)
 
 checked = st.sidebar.checkbox("The information is complete, **you can make a prediction!**")
-    if checked:
-      st.sidebar.subheader('Onset potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_onset[0], std_onset[0]))
-      st.sidebar.subheader('Oxidation potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_ox[0], std_ox[0]))
+if checked:
+    st.sidebar.subheader('Onset potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_onset[0], std_onset[0]))
+    st.sidebar.subheader('Oxidation potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_ox[0], std_ox[0]))
