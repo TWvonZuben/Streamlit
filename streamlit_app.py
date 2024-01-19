@@ -10,6 +10,7 @@ Original file is located at
 import streamlit as st
 import pandas as pd
 import numpy as np
+import sklearn
 import pickle
 
 st.set_page_config(layout="wide")
@@ -1473,8 +1474,7 @@ if pageselected == 'Potentials prediction':
       X.at[0, 'W-carbons'] = 1
 
 
-    with open('model_oxidation_1.pkl', 'rb') as file:
-      model_oxidation_1 = pickle.load(file)
+    model_oxidation_1 = pickle.load(open('model_oxidation_1.pkl', 'rb'))
 
     with open('model_oxidation_2.pkl', 'rb') as file:
       model_oxidation_2 = pickle.load(file)
