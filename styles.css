@@ -1,0 +1,62 @@
+
+.stButton > button {
+  background-color: white;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 0; /* Adiciona esta linha para remover a borda arredondada */
+}
+
+/* Reset */
+div.element-container:nth-child(12) > div:nth-child(1) > button:nth-child(1){
+  background-color: #8EA140;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  border-radius: 0; /* Adiciona esta linha para remover a borda arredondada */
+}
+
+/* Done */
+div.st-emotion-cache-1ct1x8q:nth-child(4) > div:nth-child(1) > button:nth-child(1){
+  background-color: #8EA140;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  border-radius: 0; /* Adiciona esta linha para remover a borda arredondada */
+}
+
+/* Absent */
+div.st-emotion-cache-1ct1x8q:nth-child(6) > div:nth-child(1) > button:nth-child(1) > div:nth-child(1) > p:nth-child(1){
+  background-color: white;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  border-radius: 0; /* Adiciona esta linha para remover a borda arredondada */
+}
+
+/* Present */
+div.st-emotion-cache-1ct1x8q:nth-child(7) > div:nth-child(1) > button:nth-child(1) > div:nth-child(1) > p:nth-child(1){
+  background-color: white;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  border-radius: 0; /* Adiciona esta linha para remover a borda arredondada */
+}
+
+/* Absent 2*/
+div.st-emotion-cache-1ct1x8q:nth-child(2) > div:nth-child(1) > button:nth-child(1){
+  background-color: white;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  border-radius: 0; /* Adiciona esta linha para remover a borda arredondada */
+}
+
+/* Present 2*/
+div.st-emotion-cache-1ct1x8q:nth-child(3) > div:nth-child(1) > button:nth-child(1){
+  background-color: white;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  border-radius: 0; /* Adiciona esta linha para remover a borda arredondada */
+}
