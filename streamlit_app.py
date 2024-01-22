@@ -1476,16 +1476,16 @@ if pageselected == 'Potentials prediction':
     if 'Polymer' in st.session_state.selected_elements:
       X.at[0, 'W-carbons'] = 1
 
-    with open('Streamlit/model_oxidation_1.pkl', 'rb') as file:
+    with open('model_oxidation_1.pkl', 'rb') as file:
       model_oxidation_1 = pickle.load(file)
 
-    with open('Streamlit/model_oxidation_2.pkl', 'rb') as file:
+    with open('model_oxidation_2.pkl', 'rb') as file:
       model_oxidation_2 = pickle.load(file)
 
-    with open('Streamlit/model_oxidation_3.pkl', 'rb') as file:
+    with open('model_oxidation_3.pkl', 'rb') as file:
       model_oxidation_3 = pickle.load(file)
 
-    with open('Streamlit/model_oxidation_4.pkl', 'rb') as file:
+    with open('model_oxidation_4.pkl', 'rb') as file:
       model_oxidation_4 = pickle.load(file)
 
     prediction = X
