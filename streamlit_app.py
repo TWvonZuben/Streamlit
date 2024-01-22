@@ -1474,7 +1474,7 @@ if pageselected == 'Potentials prediction':
     if 'Polymer' in st.session_state.selected_elements:
       X.at[0, 'W-carbons'] = 1
 
-    with open(model_oxidation_1.pkl, 'rb') as arquivo:
+    with open('model_oxidation_1.pkl', 'rb') as arquivo:
         conteudo = arquivo.read()
         st.sidebar.write(f'Conteúdo do arquivo {nome_arquivo}: {conteudo}')
     except FileNotFoundError:
