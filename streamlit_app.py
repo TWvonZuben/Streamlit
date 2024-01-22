@@ -13,6 +13,8 @@ import numpy as np
 import pickle
 import sklearn
 from sklearn.ensemble import RandomForestRegressor
+from io import BytesIO
+import requests
 
 st.set_page_config(layout="wide")
 
@@ -1474,9 +1476,10 @@ if pageselected == 'Potentials prediction':
     if 'Polymer' in st.session_state.selected_elements:
       X.at[0, 'W-carbons'] = 1
 
-    with open('model_oxidation_1.pkl', 'rb') as file:
-      model_oxidation_1 = pickle.load(file)
-         
+    mLink_ox_1 = 'https://github.com/TWvonZuben/Streamlit/blob/main/model_oxidation_1.pkl?raw=true'
+    mfile_ox_1 = BytesIO(requests.get(mLink_ox_1).content)
+    model_oxidation_1 = pickle.load(mfile_ox_1)
+        
     with open('model_oxidation_2.pkl', 'rb') as file:
       model_oxidation_2 = pickle.load(file)
 
@@ -1636,7 +1639,6 @@ if pageselected == 'Potentials prediction':
       X_2.at[0, 'W-carbons'] = 1
     if 'Glass Carbon Electrode (GCE)' in st.session_state.selected_elements:
       X_2.at[0, 'W-carbons'] = 1
-
 
     with open('model_onset_1.pkl', 'rb') as file:
       model_onset_1 = pickle.load(file)
