@@ -1476,9 +1476,9 @@ if pageselected == 'Potentials prediction':
 
     with open(model_oxidation_1.pkl, 'rb') as arquivo:
         conteudo = arquivo.read()
-        st.write(f'Conteúdo do arquivo {nome_arquivo}: {conteudo}')
+        st.sidebar.write(f'Conteúdo do arquivo {nome_arquivo}: {conteudo}')
     except FileNotFoundError:
-        st.write(f'O arquivo {nome_arquivo} não foi encontrado.')
+        st.sidebar.write(f'O arquivo {nome_arquivo} não foi encontrado.')
 
     with open('model_oxidation_1.pkl', 'rb') as file:
       model_oxidation_1 = pickle.load(file)
