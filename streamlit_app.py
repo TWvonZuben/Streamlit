@@ -1476,15 +1476,7 @@ if pageselected == 'Potentials prediction':
     if 'Polymer' in st.session_state.selected_elements:
       X.at[0, 'W-carbons'] = 1
 
-    mLink_ox_1 = 'https://github.com/TWvonZuben/Streamlit/blob/main/model_oxidation_1.pkl?raw=true'
-    mfile_ox_1 = BytesIO(requests.get(mLink_ox_1).content)
-    model_oxidation_1 = pickle.load(mfile_ox_1)
-        
-
-
-
-
-
+         
     
 
 
