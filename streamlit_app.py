@@ -1355,9 +1355,9 @@ if pageselected == 'Potentials prediction':
     if st.session_state.sel_option_analyte == 'Ethanol' :
       X.at[0, 'ethanol'] = 1
 
-    if st.session_state.sel_selec_electrolyte == 'H2SO4' :
+    if st.session_state.sel_selec_electrolyte == 'H₂SO₄' :
       X.at[0, 'H2SO4'] = 1
-    if st.session_state.sel_selec_electrolyte == 'HClO4' :
+    if st.session_state.sel_selec_electrolyte == 'HClO₄' :
       X.at[0, 'HClO4'] = 1
     if st.session_state.sel_selec_electrolyte == 'KOH' :
       X.at[0, 'KOH'] = 1
@@ -1532,7 +1532,7 @@ if pageselected == 'Potentials prediction':
       X_2.at[0, 'ethanol'] = 1
 
     if st.session_state.sel_selec_electrolyte == 'HClO4' :
-      X_2.at[0, 'HClO4'] = 1
+      X_2.at[0, 'HClO₄'] = 1
     if st.session_state.sel_selec_electrolyte == 'NaOH' :
       X_2.at[0, 'NaOH'] = 1
 
