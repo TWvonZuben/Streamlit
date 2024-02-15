@@ -123,8 +123,6 @@ if pageselected == 'Potentials prediction':
 
     st.sidebar.subheader('Selected information:')
 
-    conc_with_three_decimals = round(st.session_state.sel_El_conc, 3)
-    st.sidebar.write(f'**Electrolyte:** {st.session_state.sel_selec_electrolyte} ({conc_with_three_decimals} mol/L)')
     st.sidebar.write(f'**Electrolyte:** {st.session_state.sel_selec_electrolyte} ({st.session_state.sel_El_conc} mol/L)')
     st.sidebar.write(f'**pH:** {st.session_state.sel_pH}')
     st.sidebar.write(f'**Analyte:** {st.session_state.sel_option_analyte} ({st.session_state.sel_concentration} mol/L)')
