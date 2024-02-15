@@ -104,7 +104,7 @@ if pageselected == 'Potentials prediction':
         st.header('Potentials prediction', divider='rainbow')
         st.subheader('Choose the parameters used')
 
-        options_electrolyte = ['KOH', 'NaOH', 'KNO3', 'phosphate','H2SO4', 'HClO4', 'HCl', 'Other']
+        options_electrolyte = 'KOH', 'NaOH', 'KNO₃', 'phosphate', 'H₂SO₄', 'HClO₄', 'HCl', 'Other'
         st.session_state.sel_selec_electrolyte = st.selectbox('**Select the :red[electrolyte]**', options_electrolyte)
 
         st.session_state.sel_El_conc = st.number_input('**Enter the :red[electrolyte concentration] value (mol/L)**',
