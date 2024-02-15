@@ -1336,6 +1336,7 @@ if pageselected == 'Potentials prediction':
                 if option_nein :
                   st.session_state.selected_material.append('N')
 
+    st.sidebar.write(f'**Working Electrode material:** {", ".join(st.session_state.selected_elements)}')
     st.sidebar.write(f'**Working Electrode material:** {st.session_state.selected_elements}')
     st.sidebar.write(f'**Depoisted material**: {st.session_state.selected_material}')
 
