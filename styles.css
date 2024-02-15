@@ -16,7 +16,8 @@ div.element-container:nth-child(12) > div:nth-child(1) > button:nth-child(1){
   border-radius: 0; 
 
 /* Done */
-div.st-emotion-cache-1af03zf:nth-child(4) > div:nth-child(1) > button:nth-child(1) > div:nth-child(1) > p:nth-child(1){
+
+div.st-emotion-cache-1af03zf:nth-child(4) > div:nth-child(1) > button:nth-child(1) {
   background-color: #8EA140;
   font-size: 20px;
   height: 50px;
