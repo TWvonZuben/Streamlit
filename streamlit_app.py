@@ -77,7 +77,7 @@ if pageselected == 'Home' :
 
     st.header('Welcome to CAPER!', divider='rainbow')
 
-    st.subheader("This tool was created to assist electrochemical scientists in predicting the results of the onset and oxidation potential of the electrooxidation of methanol and ethanol reactions. The work is better explained in the article 'Machine Learning Predictions of Onset and Oxidation Potentials for Methanol and Ethanol Electrooxidation: Comprehensive Analysis and Experimental Validation' and is based on machine learning models that utilize information from electrochemical reactions and electrode materials obtained from the literature to predict potentials.")
+    st.subheader("This tool was created to assist electrochemical scientists in predicting the results of the onset and oxidation potential of the electrooxidation of methanol and ethanol reactions. The work is better explained in the article 'Machine Learning Predictions of Onset and Oxidation Potentials for Methanol and Ethanol Electrooxidation: Comprehensive Analysis and Experimental Validation' and is based on Machine Learning models that utilize information from electrochemical reactions and electrode materials obtained from the literature to predict potentials.")
     st.subheader("The periodic table below illustrates the distribution of chemical elements used in working electrodes, as presented in the database that feeds the model. Consequently, we expect better predictions for materials with more information available in the literature and, consequently, in the database. Additionally, it is more probable that the prediction will be more accurate for methanol oxidation, as 70% of the database information is related to this analyte. The RMSE of the models is 0.169 V for oxidation potentials and 0.185 V for onset potentials.")
 
     st.image("https://github.com/TWvonZuben/Streamlit/blob/main/table.png?raw=true", width=1200)
@@ -89,7 +89,7 @@ if pageselected == 'Home' :
 
     st.subheader(":test_tube: To use the tool, first, select the option 'Potential predictions' on the left sidebar. After that, the options 'Reaction Conditions' and 'Working Electrode descrition' will appear.")
     st.subheader(":test_tube: Under 'Reaction Conditions', you must choose the electrolyte used in the reaction and its concentration. Additionally, select the pH of the solution. Choose the analyte you want to oxidize (methanol or ethanol) and its concentration. Finally, select the reference electrode you are using.")
-    st.subheader(":test_tube: Under 'Working Electrode descrition', you must choose the chemical element used in the Working Electrode and in the Deposition selecting the elements in the periodic tables.")
+    st.subheader(":test_tube: The Machine Learning model considers separately the material of the working electrode and the material deposited on it. Thus, under 'Working Electrode descrition', you must choose the chemical element used in the Working Electrode. Similarly, you have to do the same in the 'Deposited material', selecting the elements in the periodic tables.")
     st.subheader(":eyes: If you want to clear all selected elements from the Periodic Table, simply click on 'Reset' in the bottom right corner.")
     st.subheader(":eyes: In the case of Nitrogen (N) and Carbon (C), options to be chosen will appear on the left side after selecting these elements.")
 
