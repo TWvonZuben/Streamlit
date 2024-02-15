@@ -123,9 +123,13 @@ if pageselected == 'Potentials prediction':
 
     st.sidebar.subheader('Selected information:')
 
-    st.sidebar.write(f'**Electrolyte:** {st.session_state.sel_selec_electrolyte} ({st.session_state.sel_El_conc} mol/L)')
+    conc_formatted = "{:.3f}".format(max(st.session_state.sel_El_conc, 0.001))
+    st.sidebar.write(f'**Electrolyte:** {st.session_state.sel_selec_electrolyte} ({conc_formatted} mol/L)')
+
     st.sidebar.write(f'**pH:** {st.session_state.sel_pH}')
-    st.sidebar.write(f'**Analyte:** {st.session_state.sel_option_analyte} ({st.session_state.sel_concentration} mol/L)')
+
+    conc_formatted_ = "{:.3f}".format(max(st.session_state.sel_concentration, 0.001))
+    st.sidebar.write(f'**Analyte:** {st.session_state.sel_option_analyte} ({conc_formatted_} mol/L)')
     st.sidebar.write(f'**Reference electrode:** {st.session_state.sel_option_reference}')
 
     if parameters_selection == 'Working Electrode descrition':
