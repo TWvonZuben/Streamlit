@@ -82,7 +82,7 @@ if pageselected == 'Home' :
 
     st.image("https://github.com/TWvonZuben/Streamlit/blob/main/table.png?raw=true", width=1200)
 
-    st.subheader("The initiative aims to aid and accelerate the study and discovery of new electrode materials for use in this process! If you encounter any problems or have any suggestions, please feel free to contact us at thevonzuben@gmail.com :flag-br:")
+    st.subheader("The initiative aims to aid and accelerate the study and discovery of new electrode materials! If you encounter any problems or have any suggestions, please feel free to contact us at thevonzuben@gmail.com :flag-br:")
     st.subheader("The tools are simple and intuitive to use, but for optimal use and to avoid mistakes, please read the instructions provided below.")
 
     st.header('Instructions', divider='rainbow')
