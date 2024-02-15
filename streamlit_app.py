@@ -1337,8 +1337,7 @@ if pageselected == 'Potentials prediction':
                   st.session_state.selected_material.append('N')
 
     st.sidebar.write(f'**Working Electrode material:** {", ".join(st.session_state.selected_elements)}')
-    st.sidebar.write(f'**Working Electrode material:** {st.session_state.selected_elements}')
-    st.sidebar.write(f'**Depoisted material**: {st.session_state.selected_material}')
+    st.sidebar.write(f'**Depoisted material:** {", ".join(st.session_state.selected_material)}')
 
     X_oxidation = ['W-carbons','carbons','C', 'Org', 'W-graphite','W-C', 'W-Sn','W-Au','Au','W-Pd','Pd','_In','W-Fe','_Ni','Ni','Pt','W-Pt', 'W-N','O','Zn','Ag','Ru','B','Zr','Ce','Bi','W','Sb','Te', 'Cu', '_Cu', 'Rh','_Sn', 'positive','pH','El_conc','methanol','ethanol','H2SO4','HClO4','KOH','NaOH','Hg/HgO','MMS','RHE','SCE', 'J__mA_cm', 'concentration', 'Ox_Onset']
     X = pd.DataFrame(0, index=range(1), columns=X_oxidation)
