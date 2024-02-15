@@ -89,7 +89,7 @@ if pageselected == 'Home' :
 
     st.subheader(":test_tube: To use the tool, first, select the option 'Potential predictions' on the left sidebar. After that, the options 'Reaction Conditions' and 'Working Electrode descrition' will appear.")
     st.subheader(":test_tube: Under 'Reaction Conditions', you must choose the electrolyte used in the reaction and its concentration. Additionally, select the pH of the solution. Choose the analyte you want to oxidize (methanol or ethanol) and its concentration. Finally, select the reference electrode you are using.")
-    st.subheader(":test_tube: The Machine Learning model considers separately the material of the working electrode and the material deposited on it. Thus, under 'Working Electrode descrition', you must choose the chemical element used in the Working Electrode. Similarly, you have to do the same in the 'Deposited material', selecting the elements in the periodic tables.")
+    st.subheader(":test_tube: The Machine Learning model considers separately the material of the working electrode and the material deposited on it. Thus, under 'Working Electrode description', you must choose the chemical elements used in the 'Working Electrode material' and the chemical elements used in the 'Deposited material', selecting the elements from the periodic table.")
     st.subheader(":eyes: If you want to clear all selected elements from the Periodic Table, simply click on 'Reset' in the bottom right corner.")
     st.subheader(":eyes: In the case of Nitrogen (N) and Carbon (C), options to be chosen will appear on the left side after selecting these elements.")
 
