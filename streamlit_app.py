@@ -108,7 +108,7 @@ if pageselected == 'Potentials prediction':
         st.session_state.sel_selec_electrolyte = st.selectbox('**Select the :red[electrolyte]**', options_electrolyte)
 
         st.session_state.sel_El_conc = st.number_input('**Enter the :red[electrolyte concentration] value (mol/L)**',
-                                  min_value=0.0001, max_value=10.0000, value=1.0000, step=0.0001)
+                                  min_value=0.001, max_value=10.000, value=1.000, step=0.001, format="%.3f")
         st.session_state.sel_pH = st.slider('**Select the :red[pH] value**', min_value=0.0, max_value=14.0, value=7.0, step=0.1)
 
         options_analyte = ['Methanol', 'Ethanol']
