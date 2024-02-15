@@ -93,7 +93,7 @@ if pageselected == 'Home' :
     st.subheader(":eyes: If you want to clear all selected elements from the Periodic Table, simply click on 'Reset' in the bottom right corner.")
     st.subheader(":eyes: In the case of Nitrogen (N) and Carbon (C), options to be chosen will appear on the right side after selecting these elements.")
 
-    st.subheader(":red[Attention!] If there is any material deposited on the Working Electrode, complete the 'Deposited material' field as you did for 'Working Electrode material'.")
+    st.subheader(":red[Attention!] If there is any material deposited on the Working Electrode, please complete the 'Deposited material' field with the same information that you provided for the 'Working Electrode material'.")
 
 if pageselected == 'Potentials prediction':
 
