@@ -107,14 +107,15 @@ if pageselected == 'Potentials prediction':
         options_electrolyte = 'KOH', 'NaOH', 'KNO₃', 'phosphate', 'H₂SO₄', 'HClO₄', 'HCl', 'Other'
         st.session_state.sel_selec_electrolyte = st.selectbox('**Select the :red[electrolyte]**', options_electrolyte)
 
-        st.session_state.sel_El_conc = st.number_input('**Enter the :red[electrolyte concentration] value (mol/L)**',
+        st.session_state.sel_El_conc = st.number_input('**Enter the :red[electrolyte concentration] value (mol/L)**:',
                                   min_value=0.001, max_value=10.000, value=1.000, step=0.001, format="%.3f")
+        
         st.session_state.sel_pH = st.slider('**Select the :red[pH] value**', min_value=0.0, max_value=14.0, value=7.0, step=0.1)
 
         options_analyte = ['Methanol', 'Ethanol']
         st.session_state.sel_option_analyte = st.selectbox('**Select the :red[analyte]**', options_analyte)
 
-        st.session_state.sel_concentration = st.number_input('**Enter the value of the :red[analyte concentration] (mol/L)**:', min_value=0.001, max_value=10.000, value=1.000, step=0.001)
+        st.session_state.sel_concentration = st.number_input('**Enter the value of the :red[analyte concentration] (mol/L)**:', min_value=0.001, max_value=10.000, value=1.000, step=0.001,  format="%.3f")
 
         options_reference = ['RHE', 'SCE', 'NHE', 'SHE','Ag/AgCl', 'Hg/HgO', 'MMS', 'MMO', 'Other']
         st.session_state.sel_option_reference = st.selectbox('**Select the :red[Reference Electrode]**', options_reference)
