@@ -1749,48 +1749,48 @@ if language == 'Português :flag-br:':
     
         st.subheader(":red[Atenção!] Se nenhum material for depositado no Eletrodo de Trabalho, complete a parte de 'Material depositado' de forma idêntica a que você fez na parte de 'Materiais do Eletrodo de Trabalho'.")
     
-    if pageselected == 'Potentials prediction':
+    if pageselected == 'Predição de Potenciais':
     
-        parameters_selection = st.sidebar.radio('', ['Reactions conditions', 'Working Electrode descrition'])
+        parameters_selection = st.sidebar.radio('', ['Condições Reacionais', 'Descrição do Eletrodo de Trabalho'])
     
-        if parameters_selection == 'Reactions conditions':
+        if parameters_selection == 'Condições Reacionais':
     
-            st.header('Potentials prediction', divider='rainbow')
-            st.subheader('Choose the parameters used')
+            st.header('Predição de Potenciais', divider='rainbow')
+            st.subheader('Escolha os parâmetros usados')
     
-            options_electrolyte = 'KOH', 'NaOH', 'KNO₃', 'phosphate', 'H₂SO₄', 'HClO₄', 'HCl', 'Other'
-            st.session_state.sel_selec_electrolyte = st.selectbox('**Select the :red[electrolyte]**', options_electrolyte)
+            options_electrolyte = 'KOH', 'NaOH', 'KNO₃', 'fosfato', 'H₂SO₄', 'HClO₄', 'HCl', 'Outro'
+            st.session_state.sel_selec_electrolyte = st.selectbox('**Selecione o :red[eletrólito]**', options_electrolyte)
     
-            st.session_state.sel_El_conc = st.number_input('**Enter the :red[electrolyte concentration] value (mol/L)**:',
+            st.session_state.sel_El_conc = st.number_input('**Coloque o valor da :red[concentração de eletrólito] (mol/L)**:',
                                       min_value=0.001, max_value=10.000, value=1.000, step=0.001, format="%.3f")
             
-            st.session_state.sel_pH = st.slider('**Select the :red[pH] value**', min_value=0.0, max_value=14.0, value=7.0, step=0.1)
+            st.session_state.sel_pH = st.slider('**Selecione o valor de :red[pH]**', min_value=0.0, max_value=14.0, value=7.0, step=0.1)
     
-            options_analyte = ['Methanol', 'Ethanol']
-            st.session_state.sel_option_analyte = st.selectbox('**Select the :red[analyte]**', options_analyte)
+            options_analyte = ['Metanol', 'Etanol']
+            st.session_state.sel_option_analyte = st.selectbox('**Selecione o :red[analite]**', options_analyte)
     
-            st.session_state.sel_concentration = st.number_input('**Enter the value of the :red[analyte concentration] (mol/L)**:', min_value=0.001, max_value=10.000, value=1.000, step=0.001,  format="%.3f")
+            st.session_state.sel_concentration = st.number_input('**Coloque o valor da :red[concentração do analito] (mol/L)**:', min_value=0.001, max_value=10.000, value=1.000, step=0.001,  format="%.3f")
     
-            options_reference = ['RHE', 'SCE', 'NHE', 'SHE','Ag/AgCl', 'Hg/HgO', 'MMS', 'MMO', 'Other']
-            st.session_state.sel_option_reference = st.selectbox('**Select the :red[Reference Electrode]**', options_reference)
+            options_reference = ['RHE', 'SCE', 'NHE', 'SHE','Ag/AgCl', 'Hg/HgO', 'MMS', 'MMO', 'Outro']
+            st.session_state.sel_option_reference = st.selectbox('**Selecione o :red[Eletrodo de Referência]**', options_reference)
     
     
-        st.sidebar.subheader('Selected information:')
+        st.sidebar.subheader('Informações selecionadas:')
     
         conc_formatted = "{:.3f}".format(max(st.session_state.sel_El_conc, 0.001))
-        st.sidebar.write(f'**Electrolyte:** {st.session_state.sel_selec_electrolyte} ({conc_formatted} mol/L)')
+        st.sidebar.write(f'**Eletrólito:** {st.session_state.sel_selec_electrolyte} ({conc_formatted} mol/L)')
     
         st.sidebar.write(f'**pH:** {st.session_state.sel_pH}')
     
         conc_formatted_ = "{:.3f}".format(max(st.session_state.sel_concentration, 0.001))
-        st.sidebar.write(f'**Analyte:** {st.session_state.sel_option_analyte} ({conc_formatted_} mol/L)')
-        st.sidebar.write(f'**Reference electrode:** {st.session_state.sel_option_reference}')
+        st.sidebar.write(f'**Analite:** {st.session_state.sel_option_analyte} ({conc_formatted_} mol/L)')
+        st.sidebar.write(f'**Eletrodo de Referência:** {st.session_state.sel_option_reference}')
     
-        if parameters_selection == 'Working Electrode descrition':
+        if parameters_selection == 'Descrição do Eletrodo de Trabalho':
     
-            st.header('Working Electrode descrition', divider='rainbow')
+            st.header('Descrição do Eletrodo de Trabalho', divider='rainbow')
     
-            options_WE = ['Working Electrode material', 'Material deposited']
+            options_WE = ['Material do Eletrodo de Trabalho', 'Material depositado']
             selected_option_WE = st.selectbox('',options_WE)
     
             if 'selected_carbon' not in st.session_state:
@@ -1800,9 +1800,9 @@ if language == 'Português :flag-br:':
                   st.session_state.selected_carbon_2 = []
     
     
-            if selected_option_WE == 'Working Electrode material':
+            if selected_option_WE == 'Material do Eletrodo de Trabalho':
     
-                st.subheader('Describe the :red[material of the Working Electrode] on the selection of elements from the Periodic Table')
+                st.subheader('Descreva o :red[Material do Eletrodo de Trabalho] selecionando os elementos na Tabela Periódica')
     
                 col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13, col14, col15, col16, col17, col18, col19, col20 = st.columns([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6])
     
@@ -2378,28 +2378,28 @@ if language == 'Português :flag-br:':
     
                   if 'C' in st.session_state.selected_carbon:
     
-                    st.write('**Selected the type of the carbon:**')
-                    selected_carbon_options = st.multiselect('**Options:**',
-                    ['Graphite', 'Glass Carbon Electrode (GCE)', 'Graphene (G)', 'Graphene Oxide (GO)', 'Graphene Oxide Reduced (RGO)', 'Other', 'Polymer']
+                    st.write('**Selecione a forma do carbono:**')
+                    selected_carbon_options = st.multiselect('**Opções:**',
+                    ['Grafite', 'Eletrodo de Carbono Vítreo (GCE)', 'Grafeno (G)', 'Óxido de grafeno (GO)', 'Óxido de grafeno reduzido (RGO)', 'Polímero', 'Outro']
                     )
                     st.markdown("<div style='height: 250px;'></div>", unsafe_allow_html=True)
-                    if st.button('Done'):
+                    if st.button('Feito'):
                       st.session_state.selected_elements.extend(selected_carbon_options)
     
                 with col20:
     
                   if 'N' in st.session_state.selected_carbon:
-                    st.write('**Is :red[Aniline] present in the material of the Working Electrode?**')
-                    option_yes = st.button('Present')
-                    option_nein = st.button('Absent')
+                    st.write('**Tem :red[Anilina] presente no material do Eletrodo de Trabalho?**')
+                    option_yes = st.button('Presente')
+                    option_nein = st.button('Ausente')
                     if option_yes :
-                      st.session_state.selected_elements.append('Aniline')
+                      st.session_state.selected_elements.append('Anilina')
                     if option_nein :
                       st.session_state.selected_elements.append('N')
     
-            if selected_option_WE == 'Material deposited':
+            if selected_option_WE == 'Material depositado':
     
-                st.subheader('Describe the :red[material deposited] on the working electrode based on the selection of elements from the Periodic Table')
+                st.subheader('Descreva o :red[material depositedo] no Eletrodo de Trabalho a partir da seleção dos elementos na Tabela Periódica')
     
                 col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13, col14, col15, col16, col17, col18, col19, col20 = st.columns([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6])
     
@@ -2976,27 +2976,27 @@ if language == 'Português :flag-br:':
     
                   if 'C' in st.session_state.selected_carbon_2:
     
-                    st.write('**Selected the type of the carbon:**')
-                    selected_carbon_options = st.multiselect('**Options:**',
-                    ['Carbon nanotube (CNT)', 'Organic', 'Graphene (G)', 'Polymer', 'Other']
+                    st.write('**Selecione a forma do carbono usado:**')
+                    selected_carbon_options = st.multiselect('**Opções:**',
+                    ['Nanotubo de carbono (CNT)', 'Cadeia orgânica', 'Grafeno (G)', 'Polímero', 'Outro']
                     )
                     st.markdown("<div style='height: 250px;'></div>", unsafe_allow_html=True)
-                    if st.button('Done'):
+                    if st.button('Feito'):
                       st.session_state.selected_material.extend(selected_carbon_options)
     
                   if 'N' in st.session_state.selected_carbon_2:
-                    st.write('**Is :red[Aniline] present in the material of the Working Electrode?**')
+                    st.write('**Tem :red[Anilinea presente no material do Electrodo de Trabalho?**')
     
-                    option_yes = st.button('Present')
-                    option_nein = st.button('Absent')
+                    option_yes = st.button('Presente')
+                    option_nein = st.button('Ausente')
     
                     if option_yes :
-                      st.session_state.selected_material.append('Aniline')
+                      st.session_state.selected_material.append('Anilina')
                     if option_nein :
                       st.session_state.selected_material.append('N')
     
-        st.sidebar.write(f'**Working Electrode material:** {", ".join(st.session_state.selected_elements)}')
-        st.sidebar.write(f'**Depoisted material:** {", ".join(st.session_state.selected_material)}')
+        st.sidebar.write(f'**Material do Eletrodo de Trabalho:** {", ".join(st.session_state.selected_elements)}')
+        st.sidebar.write(f'**Material depositado:** {", ".join(st.session_state.selected_material)}')
     
         X_oxidation = ['W-carbons','carbons','C', 'Org', 'W-graphite','W-C', 'W-Sn','W-Au','Au','W-Pd','Pd','_In','W-Fe','_Ni','Ni','Pt','W-Pt', 'W-N','O','Zn','Ag','Ru','B','Zr','Ce','Bi','W','Sb','Te', 'Cu', '_Cu', 'Rh','_Sn', 'positive','pH','El_conc','methanol','ethanol','H2SO4','HClO4','KOH','NaOH','Hg/HgO','MMS','RHE','SCE', 'J__mA_cm', 'concentration', 'Ox_Onset']
         X = pd.DataFrame(0, index=range(1), columns=X_oxidation)
