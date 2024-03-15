@@ -1698,11 +1698,10 @@ if language == 'English :flag-us:':
 
 if language == 'Português :flag-br:':
 
-    st.sidebar.title('**Opções*')
+    st.sidebar.title('**Opções**')
     
-    pageselected = st.sidebar.selectbox('', ['Home','Potentials prediction'])
-    
-    
+    pageselected = st.sidebar.selectbox('', ['Início','Predição de Potenciais'])
+        
     # Initialize session state variables
     if 'selected_elements' not in st.session_state:
         st.session_state.selected_elements = []
@@ -1728,28 +1727,27 @@ if language == 'Português :flag-br:':
     if 'sel_option_analyte' not in st.session_state:
         st.session_state.sel_option_analyte = []
     
-    if pageselected == 'Home' :
+    if pageselected == 'Início' :
         st.image("https://github.com/TWvonZuben/Streamlit/blob/main/capper_cover.png?raw=true")
     
-        st.header('Welcome to CAPER!', divider='rainbow')
+        st.header('Bem-vindo ao CAPER!', divider='rainbow')
     
-        st.subheader("This tool was created to assist electrochemical scientists in predicting the results of the onset and oxidation potential of the electrooxidation of methanol and ethanol reactions. The work is better explained in the article 'Machine Learning Predictions of Onset and Oxidation Potentials for Methanol and Ethanol Electrooxidation: Comprehensive Analysis and Experimental Validation' and is based on Machine Learning models that utilize information from electrochemical reactions and electrode materials obtained from the literature to predict potentials.")
-        st.subheader("The periodic table below illustrates the distribution of chemical elements used in working electrodes, as presented in the database that feeds the model. Consequently, we expect better predictions for materials with more information available in the literature and, consequently, in the database. Additionally, it is more probable that the prediction will be more accurate for methanol oxidation, as 70% of the database information is related to this analyte. The RMSE of the models is 0.169 V for oxidation potentials and 0.185 V for onset potentials.")
-    
+        st.subheader("Essa é uma ferramente criada para auxiliar os eletroquímicos na predição de resultados de potenciais de início de reação e de pico de oxidação de reações de oxidação de metanol e etanol. O trabalho é melhor explicado no artigo *Machine Learning Predictions of Onset and Oxidation Potentials for Methanol and Ethanol Electrooxidation: Comprehensive Analysis and Experimental Validation'* e é baseado em modelos de Aprendizado de Máquina para predição de potenciais eletroquímucis que utilizam dados de reações eletroquímicas e os materiais utilizados nos Eletrodos de Trabalho presentes na literature científica.")
+        st.subheader("A tabela periódica abaixo apresenta a distribuição dos elementros químicos usados nos Eletrodos de Trabalho da forma em que se encontram no banco de dados que alimenta os modelos. Dessa forma, espera-se uma melhor predição predição dos potenciais para materiais com mais informações disponíveis na literatura. Também, é provável que a predição seja mais correta para a oxidação de metanol, visto que 70% do banco de dados é relacionado a este analito. O Erro Quadrado Médio (EQM) dos modelos é 0.169 V para o potenciais de pico de oxidação e 0.185 V para o potenciais de início de reação.")    
         st.image("https://github.com/TWvonZuben/Streamlit/blob/main/table.png?raw=true", width=1200)
     
-        st.subheader("The initiative aims to aid and accelerate the study and discovery of new electrode materials! If you encounter any problems or have any suggestions, please feel free to contact us at thevonzuben@gmail.com :flag-br:")
-        st.subheader("The tools are simple and intuitive to use, but for optimal use and to avoid mistakes, please read the instructions provided below.")
+        st.subheader("A presente iniciativa busca ajudar e acelerar estudos e descobertas relacionadas a novos materiais para eletrodos! Se você encontrar qualquer problema ou tiver alguma sugestão, por favor, sinta-se à vontade para nos contatar no e-mail thevonzuben@gmail.com :flag-br:")
+        st.subheader("A ferramenta é simples e intuitiva de se usar, mas para um melhor aproveitamento e evitar erros, suggerimento que leia as instruções a seguir.")
     
-        st.header('Instructions', divider='rainbow')
+        st.header('Instruções', divider='rainbow')
     
-        st.subheader(":test_tube: To use the tool, first, select the option 'Potential predictions' on the left sidebar. After that, the options 'Reaction Conditions' and 'Working Electrode descrition' will appear.")
-        st.subheader(":test_tube: Under 'Reaction Conditions', you must choose the electrolyte used in the reaction and its concentration. Additionally, select the pH of the solution. Choose the analyte you want to oxidize (methanol or ethanol) and its concentration. Finally, select the reference electrode you are using.")
-        st.subheader(":test_tube: The Machine Learning model considers separately the material of the working electrode and the material deposited on it. Thus, under 'Working Electrode description', you must choose the chemical elements used in the 'Working Electrode material' and the chemical elements used in the 'Deposited material', selecting the elements from the periodic table.")
-        st.subheader(":eyes: If you want to clear all selected elements from the Periodic Table, simply click on 'Reset' in the bottom right corner.")
-        st.subheader(":eyes: In the case of Nitrogen (N) and Carbon (C), options to be chosen will appear on the right side after selecting these elements.")
+        st.subheader(":test_tube: Para usar a ferramente, primeiro, selecione a opção 'Predição de Potenciais' na barra lateral à esquerda. Depois disso, as opções 'Condições Reacionais' e 'Descrição do Eletrodo de Trabalho' irão aparecer.")
+        st.subheader(":test_tube: Na opção 'Condições Reacionais', você deve selecionar o eletrólito utilizado na reação e sua concentração. Também, deve selecionar o pH da solução. Escolha o analito que você deseja oxidar (metanol ou etanol). POr útlimo, selecione o Eletrodo de Referência a ser usado.")
+        st.subheader(":test_tube: Os modelos de Aprendizado de Máquina considera separadamente o material do Eletrodo de Trabalho de suporte e o material depositado sobre ele. Assim, em 'Descrição do Eletrodo de Trabalho', você deve escolher os elementos químicos que constituem o 'Material do Eletrodo de Trabalho' e os elementos químicos que constituem no 'Material depositado' no Eletrodo de Trabalho. Isso é feito selecionando os elementos diretamente na tabela periódica.")
+        st.subheader(":eyes: Se você quiser apagar todos os elementos selecionados, clique no botão 'Limpar' no canto inferior direito.")
+        st.subheader(":eyes: No caso do Nitrogênio (N) e Carbono (C), opções para serem escolhidas apareceram depois da seleção desses elementos no lado direito da tela.")
     
-        st.subheader(":red[Attention!] If there is any material deposited on the Working Electrode, please complete the 'Deposited material' field with the same information that you provided for the 'Working Electrode material'.")
+        st.subheader(":red[Atenção!] Se nenhum material for depositado no Eletrodo de Trabalho, complete a parte de 'Material depositado' de forma idêntica a que você fez na parte de 'Materiais do Eletrodo de Trabalho'.")
     
     if pageselected == 'Potentials prediction':
     
