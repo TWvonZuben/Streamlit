@@ -1758,7 +1758,7 @@ if language == 'Português :flag-br:':
             st.header('Predição de Potenciais', divider='rainbow')
             st.subheader('Escolha os parâmetros usados')
     
-            options_electrolyte = 'KOH', 'NaOH', 'KNO₃', 'fosfato', 'H₂SO₄', 'HClO₄', 'HCl', 'Outro'
+            options_electrolyte = ['KOH', 'NaOH', 'KNO₃', 'fosfato', 'H₂SO₄', 'HClO₄', 'HCl', 'Outro']
             st.session_state.sel_selec_electrolyte = st.selectbox('**Selecione o :red[eletrólito]**', options_electrolyte)
     
             st.session_state.sel_El_conc = st.number_input('**Coloque o valor da :red[concentração de eletrólito] (mol/L)**:',
