@@ -3336,9 +3336,9 @@ if language == 'Português :flag-br:':
         mean_onset = selected_rows_onset[[0]].mean(axis=0)
         std_onset = selected_rows_onset[[0]].std(axis=0)
     
-        checked = st.sidebar.checkbox("The information is complete, **you can make a prediction!**")
+        checked = st.sidebar.checkbox("As informações estão completas, **faça a predição!**")
         if checked:
-            st.sidebar.subheader('Onset potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_onset[0], std_onset[0]))
-            st.sidebar.subheader('Oxidation potential = {:.3f} ± {:.3f} V (NHE)'.format(mean_ox[0], std_ox[0]))
+            st.sidebar.subheader('Potencial de início da oxidação = {:.3f} ± {:.3f} V (NHE)'.format(mean_onset[0], std_onset[0]))
+            st.sidebar.subheader('Potencial de pico de oxidação = {:.3f} ± {:.3f} V (NHE)'.format(mean_ox[0], std_ox[0]))
     
 
