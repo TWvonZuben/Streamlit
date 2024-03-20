@@ -24,10 +24,7 @@ with open("styles.css") as f:
 st.markdown("""
 <style>
 
-[data-testid="stAppViewContainer"]{
-   background-color: #FAFFE6;
-   textColor = "#000000"
-}
+
 
 [data-testid="stHeader"] {
 background-color: rgba(0, 0, 0, 0);
