@@ -1725,7 +1725,7 @@ if language == 'Português :flag-br:':
         st.session_state.sel_option_analyte = []
     
     if pageselected == 'Início' :
-        st.image("https://github.com/TWvonZuben/Streamlit/blob/main/capper_cover.png?raw=true")
+        st.image("https://github.com/TWvonZuben/Streamlit/blob/main/caper_cover.png?raw=true")
     
         st.header('Bem-vindo ao CAPER!', divider='rainbow')
     
