@@ -74,7 +74,7 @@ if language == 'English :flag-us:':
         st.session_state.sel_option_analyte = []
     
     if pageselected == 'Home' :
-        st.image("https://github.com/TWvonZuben/Streamlit/blob/main/capper_cover.png?raw=true")
+        st.image("https://github.com/TWvonZuben/Streamlit/blob/main/caper_cover.png?raw=true")
     
         st.header('Welcome to CAPER!', divider='rainbow')
     
