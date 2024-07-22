@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
 import requests
+import pickle
+import sklearn
+from sklearn.ensemble import RandomForestRegressor
+from io import BytesIO
+
 
 st.set_page_config(layout="wide")
 
