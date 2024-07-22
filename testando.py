@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 import requests
 import pickle
-import sklearn
-from sklearn.ensemble import RandomForestRegressor
+#import sklearn
+#from sklearn.ensemble import RandomForestRegressor
 from io import BytesIO
 
 
