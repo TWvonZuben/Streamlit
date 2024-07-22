@@ -14,7 +14,7 @@ import pickle
 #import sklearn
 #from sklearn.ensemble import RandomForestRegressor
 from io import BytesIO
-import requests
+#import requests
 
 st.set_page_config(layout="wide")
 
