@@ -12,8 +12,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import requests
-#import sklearn
-import scikit-learn 
+import sklearn
 from sklearn.ensemble import RandomForestRegressor
 from io import BytesIO
 
